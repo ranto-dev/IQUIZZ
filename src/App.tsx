@@ -1,15 +1,11 @@
-import { useState } from "react";
+import Header from "./components/Header";
+import Quizz from "./components/Quizz";
 
 export default function App() {
-  const [count, setCount] = useState(0);
-  const handleClick = () => {
-    setCount(count + 1);
-  };
   return (
-    <div>
-      <h1>Hello, counter</h1>
-      <p>Your value: {count} </p>
-      <button onClick={handleClick}>Inscrement</button>
+    <div className="w-[50%] shadow-2xl m-auto h-screen">
+     <Header />
+     <Quizz />
     </div>
   );
 }

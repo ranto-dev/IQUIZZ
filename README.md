@@ -54,8 +54,7 @@ Les questions peuvent être stockées dans un fichier `questions.json` :
     "question": "Quel est le plus grand océan du monde ?",
     "choices": ["Atlantique", "Arctique", "Indien", "Pacifique"],
     "answer": "Pacifique"
-  },
-  ...
+  }
 ]
 ```
 
