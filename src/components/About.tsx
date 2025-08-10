@@ -5,11 +5,20 @@ export default function BodyApp() {
     {
       idToAccess: "/about",
       title: "✨ À propos du projet",
-      content: `<strong>Connais-tu réellement Madagascar ? </strong>
+      contentStrong: <strong>Connais-tu réellement Madagascar ? </strong>,
+      content: `
         est un quiz interactif et illustré conçu pour tester vos connaissances
         sur la culture, l'histoire, les traditions et les richesses de
         Madagascar 🇲🇬. Le jeu offre une expérience utilisateur gamifiée avec
         effets sonores, visuels et progression dynamique.`,
+    },
+    {
+      idToAccess: "/objective",
+      title: "🎯 Objectif",
+      content: `
+      Le but de ce quizz est de sensibiliser les utilisateurs à la richesse 
+      culturelle et historique de Madagascar à travers une expérience ludique, éducative et interactive.
+    `,
     },
     {
       idToAccess: "/about-developer",
@@ -27,6 +36,7 @@ export default function BodyApp() {
           <Jumbotron
             idToAccess={content.idToAccess}
             title={content.title}
+            contentStrong={content.contentStrong}
             content={content.content}
           />
         );
