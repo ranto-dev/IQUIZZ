@@ -1,0 +1,12 @@
+[
+  {
+    "question": "Qu'est ce qui est petit et maron ?",
+    "reponses_propose": ["un chat", "un petit maron", "un souris"],
+    "response": "un petit maron"
+  },
+  {
+    "question": "Qui est le personnage principale dans le dessin animé Adventure Time de CN ?",
+    "reponses_propose": ["Jack", "Bob", "Finn"],
+    "response": "Finn"
+  }
+]

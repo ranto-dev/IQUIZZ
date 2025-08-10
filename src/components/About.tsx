@@ -3,7 +3,7 @@ import Jumbotron from "./utils/Jumbotron";
 export default function BodyApp() {
   const CONTENTS = [
     {
-      idToAccess: "/about",
+      idToAccess: "about",
       title: "✨ À propos du projet",
       contentStrong: <strong>Connais-tu réellement Madagascar ? </strong>,
       content: `
@@ -13,7 +13,7 @@ export default function BodyApp() {
         effets sonores, visuels et progression dynamique.`,
     },
     {
-      idToAccess: "/objective",
+      idToAccess: "objective",
       title: "🎯 Objectif",
       content: `
       Le but de ce quizz est de sensibiliser les utilisateurs à la richesse 
@@ -21,7 +21,7 @@ export default function BodyApp() {
     `,
     },
     {
-      idToAccess: "/about-developer",
+      idToAccess: "about-developer",
       title: "💻 À propos du développeur",
       content: `
     Je suis Ranto Andrianandraina, ici à Madagascar 🇲🇬. un être passionné de la technologie. Étant étudiant en informatique à l'université ASJA Antsirabe,

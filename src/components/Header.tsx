@@ -1,4 +1,5 @@
 import bannerImage from "../assets/banner-image.jpeg";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -16,18 +17,19 @@ export default function Header() {
             <p className="text-2xl text-center text-white font-semibold">
               Connaîs-tu réellement Madagascar ?
             </p>
-            <p className="text-white text-sm text-center flex flex-col gap-2 p-4">
+            <p className="text-white text-sm text-center flex flex-col gap-4 p-4">
               Testez votre culture malgache avec un quiz fun, instructif et
               ultra stylé ! 🇲🇬
               <div>
-                <button
+                <Link
+                  to={"/quizz-start"}
                   className="rounded-2xl shadow-md text-white px-5 py-2 font-semibold"
                   style={{
                     background: "linear-gradient(135deg, #ff7e5f, #feb47b)",
                   }}
                 >
                   Démarrer un quizz
-                </button>
+                </Link>
               </div>
             </p>
           </div>
