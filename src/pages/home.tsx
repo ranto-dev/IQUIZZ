@@ -3,7 +3,7 @@ import Header from "../components/Header";
 
 export default function Home() {
   return (
-    <div>
+    <div className="w-[75%] m-auto">
       <Header />
       <About />
     </div>

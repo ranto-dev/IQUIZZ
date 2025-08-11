@@ -1,40 +1,23 @@
-import bannerImage from "../assets/banner-image.jpeg";
 import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <div>
-      <div className="relative w-full h-full">
-        <img
-          src={bannerImage}
-          alt="Image banner"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute  inset-0 bg-[#212121] opacity-50"></div>
-
-        <div className="absolute top-5 inset-0 flex items-center justify-center z-10">
-          <div className="flex flex-col">
-            <p className="text-2xl text-center text-white font-semibold">
-              Connaîs-tu réellement Madagascar ?
-            </p>
-            <p className="text-white text-sm text-center flex flex-col gap-4 p-4">
-              Testez votre culture malgache avec un quiz fun, instructif et
-              ultra stylé ! 🇲🇬
-              <div>
-                <Link
-                  to={"/quizz-start"}
-                  className="rounded-2xl shadow-md text-white px-5 py-2 font-semibold"
-                  style={{
-                    background: "linear-gradient(135deg, #ff7e5f, #feb47b)",
-                  }}
-                >
-                  Démarrer un quizz
-                </Link>
-              </div>
-            </p>
-          </div>
-        </div>
+    <section className="bg-[#ed6c18] text-center py-20 md:py-20">
+      <div className="container mx-auto px-4">
+        <h1 className="text-4xl text-white md:text-4xl font-semibold leading-tight mb-4">
+          Connais-tu Madagascar ?
+        </h1>
+        <p className="text-dm text-white mb-8">
+          Participez à des quiz amusants et améliorez votre culture et apprend à
+          connaitre de plus en plus votre pays!
+        </p>
+        <Link
+          to={"/quizz-start"}
+          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
+        >
+          Commencer le Quiz
+        </Link>
       </div>
-    </div>
+    </section>
   );
 }

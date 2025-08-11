@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/home";
-import Quizz from "./pages/Quizz";
+import QuizzBody from "./pages/Quizz";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -10,7 +10,7 @@ export default function App() {
     },
     {
       path: "/quizz-start",
-      element: <Quizz />,
+      element: <QuizzBody />,
     },
   ]);
 
