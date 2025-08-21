@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import QuizGame from "../components/QuizGame";
 
-// Interface pour typer un quiz
 interface Quiz {
   question: string;
   reponses_propose: string[];
   response: string;
 }
 
-// Fonction pour mélanger un tableau de façon aléatoire
 const shuffleArray = (array: Quiz[]) => {
-  const newArray = [...array]; // Crée une copie pour ne pas modifier l'original
+  const newArray = [...array];
   for (let i = newArray.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
@@ -23,7 +21,7 @@ const QuizzBody: React.FC = () => {
   const [selectedQuizzes, setSelectedQuizzes] = useState<Quiz[]>([]);
 
   useEffect(() => {
-    fetch("/question.json", {
+    fetch("/quiz-patterns.json", {
       method: "GET",
     })
       .then((response) => response.json())

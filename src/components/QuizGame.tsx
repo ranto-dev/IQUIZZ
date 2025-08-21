@@ -193,7 +193,7 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
               ${
                 selectedAnswer
                   ? "bg-[#ed6d18f2] hover:bg-[#ed6c18]"
-                  : "bg-gray-600 cursor-not-allowed"
+                  : "bg-[#b3510f] cursor-not-allowed"
               }
             `}
           >

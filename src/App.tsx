@@ -9,7 +9,7 @@ export default function App() {
       element: <Home />,
     },
     {
-      path: "/quizz-start",
+      path: "/commencer-un-quiz",
       element: <QuizzBody />,
     },
   ]);
