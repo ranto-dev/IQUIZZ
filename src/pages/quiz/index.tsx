@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import QuizGame from "../components/QuizGame";
+import QuizGame from "../../components/QuizGame";
+import "./quizz.css"
 
 interface Quiz {
   question: string;
@@ -42,7 +43,7 @@ const QuizzBody: React.FC = () => {
   }, [fetched]);
 
   return (
-    <div>
+    <div className="bg-emerald-400 min-h-screen flex flex-col quiz-container">
       {selectedQuizzes.length > 0 ? (
         <QuizGame quizzes={selectedQuizzes} />
       ) : (

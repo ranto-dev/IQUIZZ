@@ -135,45 +135,47 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
   }
 
   return (
-    <div className="relative w-[50%] m-auto flex flex-col items-center justify-center min-h-screen bg-white  text-white p-4">
+    <div className="w-[30%] min-h-full m-auto bg-white p-4 rounded-4xl">
+      {/* Timer bock start */}
       <div
-        className={`absolute top-4 right-4 text-xl w-[12%] rounded-full px-4 py-1 text-white flex justify-center gap-1 items-center font-medium ${
-          questionTimeLeft > 5 ? " bg-green-500" : "bg-red-500"
+        className={`flex justify-end items-center text-lg ${
+          questionTimeLeft > 5
+            ? " text-green-500"
+            : "text-amber-700 animate-pulse"
         }`}
       >
-        <span>
-          {" "}
-          <FaStopwatch />
-        </span>{" "}
+        <FaStopwatch />
         <span>
           {questionTimeLeft < 10 ? "0" : null}
           {questionTimeLeft}s
         </span>
       </div>
+      {/* Timer bock end */}
 
-      <div className="p-8 rounded-lg shadow-xl w-full max-w-xl">
-        <h2 className="text-center text-2xl font-bold mb-6 text-[#ed6c18]">
-          Question {currentQuestionIndex + 1} / {totalQuestions}
+      {/* Quiz bock start */}
+      <div className="flex flex-col gap-4">
+        <h2 className="text-center text-2xl text-amber-600">
+          {currentQuestionIndex + 1} / {totalQuestions}
         </h2>
-        <p className="text-md text-black text-center mb-8">
+        <p className="text-sm text-black text-center">
           {currentQuestion.question}
         </p>
 
-        <div className="grid grid-cols-1 w-[75%] m-auto gap-4 mb-6">
+        <div className="flex flex-col gap-2">
           {currentQuestion.reponses_propose.map((answer, index) => (
             <button
               key={index}
               onClick={() => handleAnswerSelection(answer)}
               disabled={isAnswerSubmitted}
               className={`
-                p-4 rounded-lg text-sm transition-colors duration-200 ease-in-out
+                p-2 rounded-lg text-sm transition-colors duration-200 ease-in-out
                 ${
                   isAnswerSubmitted && answer === currentQuestion.response
-                    ? "bg-green-600 hover:bg-green-700 text-white"
+                    ? "bg-green-500 hover:bg-green-600 text-white"
                     : isAnswerSubmitted && selectedAnswer === answer
-                    ? "bg-red-600 hover:bg-red-700 text-white"
+                    ? "bg-amber-700 hover:bg-amber-800 text-white"
                     : selectedAnswer === answer
-                    ? "bg-[#ed6d18f2] hover:bg-[#ed6c18] text-white"
+                    ? "bg-gray-800 hover:bg-gray-900 text-white"
                     : "bg-white hover:scale-103  text-black border-1 border-black"
                 }
                 ${isAnswerSubmitted ? "cursor-not-allowed" : "cursor-pointer"}
@@ -200,14 +202,28 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
             Valider
           </button>
         ) : (
-          <button
-            onClick={handleNextQuestion}
-            className="w-full py-2 text-md font-medium bg-green-500 hover:bg-green-600 rounded-lg transition-colors duration-200"
-          >
-            {currentQuestionIndex < totalQuestions - 1
-              ? "Question Suivante"
-              : "Voir le Score"}
-          </button>
+          <div className="flex gap-2 border-t-1 border-gray-800 mt-4 py-4 ">
+            <button
+              className="w-full p-2 font-medium text-sm bg-gray-700 hover:bg-gray-800 rounded-full transition-colors duration-200"
+            >
+              Voir comment
+            </button>
+            {currentQuestionIndex < totalQuestions - 1 ? (
+              <button
+                className="w-full p-2 font-medium text-sm bg-green-500 hover:bg-green-600 rounded-full transition-colors duration-200"
+                onClick={handleNextQuestion}
+              >
+                Question suivante
+              </button>
+            ) : (
+              <button
+                className="w-full py-2 text-md font-medium bg-green-500 hover:bg-green-600 rounded-lg transition-colors duration-200"
+                onClick={handleNextQuestion}
+              >
+                Voir le score
+              </button>
+            )}
+          </div>
         )}
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/home";
-import QuizzBody from "./pages/Quizz";
+import QuizzBody from "./pages/quiz";
 
 export default function App() {
   const router = createBrowserRouter([
