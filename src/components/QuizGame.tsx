@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaStopwatch } from "react-icons/fa6";
+import { FaArrowRotateLeft, FaHouse, FaRegCircleCheck, FaStopwatch, FaUserGraduate } from "react-icons/fa6";
+import { FaArrowCircleRight } from "react-icons/fa";
 
 // Interface pour typer un quiz
 interface Quiz {
@@ -94,33 +95,33 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
 
   if (quizFinished) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-white p-4">
-        <div className="rounded-xl shadow-2xl px-5 py-10 w-[40%] flex flex-col items-center">
-          <h2 className="text-4xl font-semibold text-[#ed6c18] animate-bounce">
-            Quiz terminé !
-          </h2>
-          <div className="flex flex-col mt-4">
-            <p className="text-sm">
-              Votre score final est de{" "}
-              <span className="font-bold text-green-400">{score}</span> /{" "}
-              {totalQuestions}
-            </p>
-            <p className="text-xl mt-4">{scoreMessage}</p>
-            <div className="flex flex-row justify-end items-center gap-4 pt-4">
-              <button
-                onClick={handleRestart}
-                className="bg-green-500 rounded-2xl text-white px-4 py-3"
-              >
-                Rejouer
-              </button>
-              <Link
-                className="bg-red-500 rounded-2xl text-white px-4 py-3"
-                to={"/"}
-              >
-                Quitter
-              </Link>
-            </div>
-          </div>
+      <div className="flex flex-col gap-10 bg-white rounded-4xl shadow-2xl p-10">
+        <div>
+          <h2 className="text-4xl text-[#ed6c18]">Quiz terminé !</h2>
+        </div>
+        <div>
+          <p className="text-black text-sm">
+            Votre score final est de{" "}
+            <span className="font-bold text-green-400 underline">{score}</span>{" "}
+            / {totalQuestions}
+          </p>
+          <p className="text-xl text-black mt-4">{scoreMessage}</p>
+        </div>
+        <div className="flex gap-1 justify-center">
+          <button
+            onClick={handleRestart}
+            className="bg-green-500 rounded-2xl text-white px-4 py-3 flex gap-1 justify-center items-center"
+          >
+            <FaArrowRotateLeft />
+            Recommencer
+          </button>
+          <Link
+            className="bg-amber-600 rounded-2xl text-white px-4 py-3 flex gap-1 justify-center items-center"
+            to={"/"}
+          >
+            <FaHouse />
+            Menu principale
+          </Link>
         </div>
       </div>
     );
@@ -142,7 +143,7 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
           questionTimeLeft > 5
             ? " text-green-500"
             : "text-amber-700 animate-pulse"
-        }`}
+        } ${!isAnswerSubmitted ? "block" : "hidden"}`}
       >
         <FaStopwatch />
         <span>
@@ -191,7 +192,7 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
             onClick={handleSubmitAnswer}
             disabled={!selectedAnswer}
             className={`
-              w-full py-2 text-md font-medium rounded-lg transition-colors duration-200
+              w-full text-md font-medium rounded-lg transition-colors duration-200 flex gap-1 justify-center items-center p-2
               ${
                 selectedAnswer
                   ? "bg-[#ed6d18f2] hover:bg-[#ed6c18]"
@@ -199,21 +200,22 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
               }
             `}
           >
+            <FaRegCircleCheck />
             Valider
           </button>
         ) : (
           <div className="flex gap-2 border-t-1 border-gray-800 mt-4 py-4 ">
-            <button
-              className="w-full p-2 font-medium text-sm bg-gray-700 hover:bg-gray-800 rounded-full transition-colors duration-200"
-            >
-              Voir comment
+            <button className="w-full flex gap-1 justify-center items-center p-2 font-medium text-sm bg-gray-700 hover:bg-gray-800 rounded-full transition-colors duration-200">
+              <FaUserGraduate />
+              Consulter
             </button>
             {currentQuestionIndex < totalQuestions - 1 ? (
               <button
-                className="w-full p-2 font-medium text-sm bg-green-500 hover:bg-green-600 rounded-full transition-colors duration-200"
+                className="w-full flex gap-1 justify-center items-center p-2 font-medium text-sm bg-green-500 hover:bg-green-600 rounded-full transition-colors duration-200"
                 onClick={handleNextQuestion}
               >
-                Question suivante
+                <FaArrowCircleRight />
+                 Suivante
               </button>
             ) : (
               <button
