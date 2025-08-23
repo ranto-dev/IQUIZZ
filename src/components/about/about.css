@@ -1,8 +1,13 @@
 .about-bg-mada {
-    background-image: url("../../assets/mada.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    border-radius: 8rem 2rem 2rem 8rem;
+  background-image: url("../../assets/mada.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  border-radius: 8rem 2rem 2rem 8rem;
+}
+
+.hover-effect:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
 }

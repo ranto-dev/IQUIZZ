@@ -25,10 +25,10 @@ export default function About() {
 
   return (
     <div className="flex flex-row gap-2 justify-center items-center max-w-full max-h-full p-4 bg-amber-50">
-      <div className="flex flex-col gap-[2rem] text-center">
+      <div className="flex flex-col justify-center items-center gap-[2rem] text-center">
         {/* About introducton */}
         <div className="w-full lg:w-[75%] m-auto flex flex-col gap-4">
-          <h1 className="text-2xl lg:text-4xl text-amber-600 text-center">
+          <h1 className="text-2xl lg:text-4xl text-amber-600">
             ✨ À propos du projet
           </h1>
           <p>
@@ -51,7 +51,7 @@ export default function About() {
             return (
               <div
                 key={t.id}
-                className="rounded-2xl shadow-2xl p-4 w-full h-full flex flex-col gap-4 items-center bg-white"
+                className="rounded-2xl shadow-2xl p-4 w-full h-full flex flex-col gap-4 items-center bg-white hover-effect"
               >
                 <div>{t.icon}</div>
                 <div>
@@ -63,7 +63,7 @@ export default function About() {
           })}
         </div>
       </div>
-      <div className="h-full w-full about-bg-mada hidden lg:block"></div>
+      <div className="h-full w-full about-bg-mada hidden xl:block"></div>
     </div>
   );
 }

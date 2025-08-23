@@ -98,9 +98,9 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
 
   if (quizFinished) {
     return (
-      <div className="flex flex-col gap-10 bg-white rounded-4xl shadow-2xl p-10">
+      <div className="flex flex-col gap-4 lg:gap-10 bg-white rounded-4xl shadow-2xl p-10 w-[75%] lg:w-[40%] xl:w-[30%]">
         <div>
-          <h2 className="text-4xl text-[#ed6c18]">Quiz terminé !</h2>
+          <h2 className="text-2xl lg:text-4xl text-[#ed6c18]">Quiz terminé !</h2>
         </div>
         <div>
           <p className="text-black text-sm">
@@ -110,16 +110,16 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
           </p>
           <p className="text-xl text-black mt-4">{scoreMessage}</p>
         </div>
-        <div className="flex gap-1 justify-center">
+        <div className="flex flex-col lg:flex-row gap-1 justify-center m-auto">
           <button
             onClick={handleRestart}
-            className="bg-green-500 rounded-2xl text-white px-4 py-3 flex gap-1 justify-center items-center"
+            className="bg-green-500 rounded-2xl text-white text-sm lg:text-md px-3 py-2 lg:px-4 lg:py-3 flex gap-1 justify-center items-center"
           >
             <FaArrowRotateLeft />
             Recommencer
           </button>
           <Link
-            className="bg-amber-600 rounded-2xl text-white px-4 py-3 flex gap-1 justify-center items-center"
+            className="bg-amber-600 rounded-2xl text-white text-sm lg:text-md px-3 py-2 lg:px-4 lg:py-3 flex gap-1 justify-center items-center"
             to={"/"}
           >
             <FaHouse />
@@ -139,7 +139,7 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
   }
 
   return (
-    <div className="w-[30%] min-h-full m-auto bg-white p-4 rounded-4xl">
+    <div className="w-[75%] lg:w-[35%] xl: x-[30%] min-h-full m-auto bg-white p-4 rounded-4xl">
       {/* Timer bock start */}
       <div
         className={`flex justify-end items-center text-lg ${
