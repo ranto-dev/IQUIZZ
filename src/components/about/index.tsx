@@ -4,16 +4,19 @@ import { FaRegLightbulb, FaSplotch, FaGraduationCap } from "react-icons/fa6";
 export default function About() {
   const appTarget = [
     {
+      id: 1,
       icon: <FaRegLightbulb className="text-4xl text-amber-600" />,
       title: "Découvert et culture",
       detail: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
     },
     {
+      id: 2,
       icon: <FaGraduationCap className="text-4xl text-amber-600" />,
       title: "Education",
       detail: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
     },
     {
+      id: 3,
       icon: <FaSplotch className="text-4xl text-amber-600" />,
       title: "Loisir et divertissement",
       detail: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
@@ -24,8 +27,8 @@ export default function About() {
     <div className="flex flex-row gap-2 justify-center items-center max-w-full max-h-full p-4 bg-amber-50">
       <div className="flex flex-col gap-[2rem] text-center">
         {/* About introducton */}
-        <div className="w-[75%] m-auto flex flex-col gap-4">
-          <h1 className="text-4xl text-amber-600 text-center">
+        <div className="w-full lg:w-[75%] m-auto flex flex-col gap-4">
+          <h1 className="text-2xl lg:text-4xl text-amber-600 text-center">
             ✨ À propos du projet
           </h1>
           <p>
@@ -43,10 +46,13 @@ export default function About() {
         </div>
 
         {/* About card */}
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-col lg:flex-row gap-2">
           {appTarget.map((t) => {
             return (
-              <div className="rounded-2xl shadow-2xl p-4 w-full h-full flex flex-col gap-4 items-center bg-white">
+              <div
+                key={t.id}
+                className="rounded-2xl shadow-2xl p-4 w-full h-full flex flex-col gap-4 items-center bg-white"
+              >
                 <div>{t.icon}</div>
                 <div>
                   <h1 className="text-xl text-amber-600">{t.title}</h1>
@@ -57,7 +63,7 @@ export default function About() {
           })}
         </div>
       </div>
-      <div className="h-full w-full about-bg-mada"></div>
+      <div className="h-full w-full about-bg-mada hidden lg:block"></div>
     </div>
   );
 }

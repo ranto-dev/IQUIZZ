@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaArrowRotateLeft, FaHouse, FaRegCircleCheck, FaStopwatch, FaUserGraduate } from "react-icons/fa6";
+import {
+  FaArrowRotateLeft,
+  FaHouse,
+  FaRegCircleCheck,
+  FaStopwatch,
+  FaUserGraduate,
+} from "react-icons/fa6";
 import { FaArrowCircleRight } from "react-icons/fa";
 
-// Interface pour typer un quiz
 interface Quiz {
   question: string;
   reponses_propose: string[];
@@ -19,7 +24,7 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [score, setScore] = useState(0);
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
-  const [questionTimeLeft, setQuestionTimeLeft] = useState(15); // 10 secondes par question
+  const [questionTimeLeft, setQuestionTimeLeft] = useState(15);
   const [quizFinished, setQuizFinished] = useState(false);
 
   const currentQuestion =
@@ -35,7 +40,6 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
       if (questionTimeLeft > 0) {
         setQuestionTimeLeft(questionTimeLeft - 1);
       } else {
-        // Le temps est écoulé, on passe à la question suivante
         handleNextQuestion();
       }
     }, 1000);
@@ -44,7 +48,6 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [questionTimeLeft, isAnswerSubmitted, quizFinished]);
 
-  // Réinitialiser le timer à chaque nouvelle question
   useEffect(() => {
     if (!quizFinished) {
       setQuestionTimeLeft(15);
@@ -215,7 +218,7 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
                 onClick={handleNextQuestion}
               >
                 <FaArrowCircleRight />
-                 Suivante
+                Suivante
               </button>
             ) : (
               <button
