@@ -1,34 +1,43 @@
-# 🧠 Quiz App – React + TypeScript
+# 🇲🇬 MadaKo'IS ? – Quizz Éducatif & Ludique
 
-Une application web de quiz interactive développée avec **React** et **TypeScript**, permettant aux utilisateurs de tester leurs connaissances à travers une série de questions à choix multiples.
+🎮 **Testez vos connaissances sur Madagascar à travers un quizz fun, visuel et immersif !**
+
+Ce projet a été réalisé avec un objectif clair : offrir une **expérience utilisateur exceptionnelle** mêlant **éducation, humour et gameplay dynamique**, le tout avec un **design moderne et réactif**.
 
 ---
 
-## 🚀 Fonctionnalités
+## 🎯 Objectifs du projet
 
-- ✅ Interface utilisateur responsive et moderne
-- ✅ Chargement dynamique des questions (via API ou JSON local)
+- ✅ Promouvoir la culture malgache de manière ludique
+- ✅ Stimuler la curiosité et l’apprentissage grâce au jeu
+- ✅ Offrir un design engageant, réactif et professionnel
+- ✅ Mettre en avant le potentiel créatif des développeurs malgaches
+
+---
+
+## ✨ Fonctionnalités principales
+
+- 🎵 **Musique et effets sonores dynamiques**
+- 🔄 **Chargement dynamique des questions (via API ou JSON local)**
+- 🏅 **Écran de fin animé avec résumé des performances**
+- 📱 **100% responsive sur mobile et desktop**
+- ⚡ **Animations cinématiques & loaders créatifs**
+- 📚 **Section About, FAQ et Témoignages stylés**
 - ✅ Chronomètre intégré (optionnel)
-- ✅ Système de score automatique
-- ✅ Navigation entre les questions
 - ✅ Affichage des réponses correctes à la fin
 
----
-
-## 🛠️ Stack technique
+## 🧩 Stack technique
 
 - ⚛️ [React](https://reactjs.org/)
 - 🟦 [TypeScript](https://www.typescriptlang.org/)
-- 🎨 [Tailwind CSS](https://tailwindcss.com/) (ou autre framework CSS au choix)
-- 📦 [Vite](https://vitejs.dev/) _(ou Create React App)_
-
----
+- 🎨 [Tailwind CSS](https://tailwindcss.com/)
+- 📦 [Vite](https://vitejs.dev/)
 
 ## 📦 Installation
 
 ```bash
-git clone hgit@github.com:ranto-dev/IQUIZZ.git
-cd IQUIZZ
+git clone git@github.com:ranto-dev/IQUIZZ.git Madako'is
+cd Madako'is
 npm install
 ```
 
@@ -51,10 +60,16 @@ Les questions peuvent être stockées dans un fichier `questions.json` :
 ```json
 [
   {
-    "question": "Quel est le plus grand océan du monde ?",
-    "choices": ["Atlantique", "Arctique", "Indien", "Pacifique"],
-    "answer": "Pacifique"
-  }
+    "question": "Quelle est la capitale de Madagascar ?",
+    "reponses_propose": [
+      "Mahajanga",
+      "Antsirabe",
+      "Fianarantsoa",
+      "Antananarivo"
+    ],
+    "response": "Antananarivo"
+  },
+  ...
 ]
 ```
 
@@ -73,7 +88,7 @@ Les questions peuvent être stockées dans un fichier `questions.json` :
 
 ## 📸 Aperçu
 
-![screenshot](./screenshot.png)
+![screenshot](./madakois.png)
 
 ---
 
@@ -81,12 +96,6 @@ Les questions peuvent être stockées dans un fichier `questions.json` :
 
 Les contributions sont les bienvenues !
 Merci de créer une issue ou une pull request avec vos propositions.
-
----
-
-## 📄 Licence
-
-Ce projet est sous licence **MIT**.
 
 ---
 
