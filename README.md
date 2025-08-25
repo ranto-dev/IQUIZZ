@@ -36,8 +36,8 @@ Ce projet a été réalisé avec un objectif clair : offrir une **expérience ut
 ## 📦 Installation
 
 ```bash
-git clone git@github.com:ranto-dev/IQUIZZ.git Madako'is
-cd Madako'is
+git clone git@github.com:ranto-dev/MadaKo-IS.git MadaKo'IS
+cd MadaKo'IS
 npm install
 ```
 
